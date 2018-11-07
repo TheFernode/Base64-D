@@ -1,4 +1,5 @@
 import encoder : encode, decode;
+import messages;
 import std.stdio;
 import std.string;
 
@@ -8,7 +9,7 @@ int main(string[] args)
 	char mode;
 	if(args.length < 4)
 	{
-		writeln("You must use arguments!\n\n*.exe inputString outputFile mode\ninputString = Any String; OutputFile = Any String; Mode = 'E' = Encode or 'D' = Decode");
+		writeln(Messages.NoArgumentMessage);
 		return -1;
 	}
 	input = args[1];
@@ -19,22 +20,22 @@ int main(string[] args)
 	{
 		case 'E':
 			if (encode(input, output))
-				writeln("Successfully encoded!");
+				writeln(Messages.SuccessfullyEncoded);
 			else {
-				writeln("Failed in encoding string!");
+				writeln(Messages.FailedInEncodingString);
 				return -1;
 			}
 			break;
 		case 'D':
 			if (decode(input, output))
-				writeln("Successfully decoded!");
+				writeln(Messages.SuccessfullyDecoded);
 			else {
-				writeln("Failed in decoding string!");
+				writeln(Messages.FailedInDecodingString);
 				return -1;
 			}
 			break;
 		default:
-			writeln("Unknown operator!");
+			writeln(Messages.UnknownOperator);
 			return -1;
 	}
 	return 0;
