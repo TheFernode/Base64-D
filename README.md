@@ -12,13 +12,13 @@ OutputFile : string
 Mode : char
 
 
-Mode {
+    Mode {
 
-    'E' = Encode
+        'E' = Encode
   
-    'D' = Decode
+        'D' = Decode
   
-}
+    }
 
 Example:
 
