@@ -26,6 +26,7 @@ int main(string[] args)
 				return -1;
 			}
 			break;
+
 		case 'D':
 			if (decode(input, output))
 				writeln(Messages.SuccessfullyDecoded);
@@ -34,6 +35,7 @@ int main(string[] args)
 				return -1;
 			}
 			break;
+
 		default:
 			writeln(Messages.UnknownOperator);
 			return -1;
